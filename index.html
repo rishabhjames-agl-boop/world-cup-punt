@@ -31,21 +31,19 @@
     opacity:0;animation:rise 1s .22s cubic-bezier(.16,1,.3,1) forwards}
   .sub .date{font-size:1.05rem}
   .sub .updated{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--fg-faint);letter-spacing:.04em}
-  .intro{margin-top:1.6rem;max-width:62ch;color:var(--fg-dim);font-size:1.02rem;
+  .intro{margin-top:1.6rem;max-width:64ch;color:var(--fg-dim);font-size:1.02rem;
     opacity:0;animation:rise 1s .3s cubic-bezier(.16,1,.3,1) forwards}
 
-  /* section heading */
   .shead{display:flex;align-items:baseline;gap:1rem;margin:4rem 0 1.8rem}
   .shead h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.7rem,4vw,2.4rem);letter-spacing:-.02em}
   .shead .line{flex:1;height:1px;background:var(--hair)}
   .shead .count{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--fg-faint);letter-spacing:.1em}
 
-  /* flags */
   .flag{width:34px;height:24px;object-fit:cover;border-radius:3px;border:1px solid var(--hair);
     vertical-align:middle;display:inline-block;background:var(--bg-lift)}
   .flag.sm{width:26px;height:18px}
 
-  /* scorecard graph */
+  /* scorecard */
   .scorecard{display:grid;grid-template-columns:auto 1fr;gap:2.4rem;align-items:center;
     border:1px solid var(--hair);border-radius:6px;padding:2rem;background:var(--bg-lift);margin-top:1rem}
   @media(max-width:620px){.scorecard{grid-template-columns:1fr;gap:1.6rem;text-align:center}}
@@ -55,53 +53,43 @@
   .sc-body .sc-label{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.16em;
     text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
   .sc-tiles{display:flex;flex-wrap:wrap;gap:.6rem}
-  .sc-tile{display:flex;align-items:center;gap:.6rem;border:1px solid var(--hair);border-radius:4px;
-    padding:.6rem .9rem;font-size:.9rem}
-  .sc-tile .tick{color:var(--good);font-weight:600}
-  .sc-tile .cross{color:var(--risk);font-weight:600}
+  .sc-tile{display:flex;align-items:center;gap:.6rem;border:1px solid var(--hair);border-radius:4px;padding:.6rem .9rem;font-size:.9rem}
+  .sc-tile .tick{color:var(--good);font-weight:600}.sc-tile .cross{color:var(--risk);font-weight:600}
   .sc-note{margin-top:1rem;color:var(--fg-dim);font-size:.9rem;max-width:60ch}
 
-  /* result card (detailed) */
-  .rcard{border:1px solid var(--hair);border-radius:6px;padding:1.8rem;margin-bottom:1rem;
-    background:var(--bg-lift);opacity:0;transform:translateY(20px);
-    transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+  /* result card */
+  .rcard{border:1px solid var(--hair);border-radius:6px;padding:1.8rem;margin-bottom:1rem;background:var(--bg-lift);
+    opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
   .rcard.in{opacity:1;transform:none}
   .rc-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
   .rc-teams{display:flex;align-items:center;gap:1.4rem}
   .rc-side{display:flex;align-items:center;gap:.7rem}
   .rc-side .nm{font-family:'Fraunces',serif;font-size:clamp(1.2rem,3vw,1.7rem);font-weight:500}
   .rc-score{font-family:'Fraunces',serif;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:600;letter-spacing:.02em}
-  .rc-score .dash{color:var(--fg-faint);padding:0 .35rem}
-  .rc-score .win{color:var(--accent)}
-  .rc-meta{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--fg-dim);
-    text-align:right;line-height:1.8;letter-spacing:.04em}
+  .rc-score .dash{color:var(--fg-faint);padding:0 .35rem}.rc-score .win{color:var(--accent)}
+  .rc-meta{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--fg-dim);text-align:right;line-height:1.8;letter-spacing:.04em}
   .rc-meta .stage{color:var(--accent)}
   .rc-verdict{margin-top:1.2rem;color:var(--fg-dim);font-size:.95rem;max-width:74ch}
   .rc-reads{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem}
-  .chip{display:inline-flex;align-items:center;gap:.45rem;border:1px solid var(--hair);border-radius:3px;
-    padding:.4rem .7rem;font-size:.82rem;font-family:'Inter';color:var(--fg-dim)}
+  .chip{display:inline-flex;align-items:center;gap:.45rem;border:1px solid var(--hair);border-radius:3px;padding:.4rem .7rem;font-size:.82rem;color:var(--fg-dim)}
   .chip .mk{font-family:'JetBrains Mono',monospace;font-weight:600}
-  .chip.ok{border-color:rgba(140,169,107,0.4)}.chip.ok .mk{color:var(--good)}.chip.ok{color:var(--fg)}
+  .chip.ok{border-color:rgba(140,169,107,0.4);color:var(--fg)}.chip.ok .mk{color:var(--good)}
   .chip.no{border-color:rgba(192,100,90,0.4)}.chip.no .mk{color:var(--risk)}
 
-  /* compact results grid */
   .rgrid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:.4rem}
   @media(max-width:620px){.rgrid{grid-template-columns:1fr}}
-  .rrow{display:flex;align-items:center;justify-content:space-between;gap:1rem;
-    border:1px solid var(--hair);border-radius:4px;padding:.85rem 1.1rem;transition:background .3s}
+  .rrow{display:flex;align-items:center;justify-content:space-between;gap:1rem;border:1px solid var(--hair);border-radius:4px;padding:.85rem 1.1rem;transition:background .3s}
   .rrow:hover{background:var(--bg-lift)}
   .rrow .side{display:flex;align-items:center;gap:.55rem;flex:1;min-width:0}
   .rrow .side.a{justify-content:flex-end;text-align:right}
   .rrow .side .nm{font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .rrow .sc{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:.95rem;flex-shrink:0}
+  .rrow .sc{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:.95rem;flex-shrink:0;text-align:center}
   .rrow .sc .w{color:var(--accent)}
-  .rrow .ex{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--fg-faint);
-    letter-spacing:.08em;text-transform:uppercase}
+  .rrow .ex{font-family:'JetBrains Mono',monospace;font-size:.58rem;color:var(--fg-faint);letter-spacing:.06em;text-transform:uppercase}
 
   /* upcoming card */
-  .ucard{border:1px solid var(--hair);border-radius:6px;padding:1.6rem 1.8rem;margin-bottom:1rem;
-    opacity:0;transform:translateY(20px);
-    transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1),border-color .4s}
+  .ucard{border:1px solid var(--hair);border-radius:6px;padding:1.8rem;margin-bottom:1rem;
+    opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1),border-color .4s}
   .ucard.in{opacity:1;transform:none}
   .ucard:hover{border-color:rgba(201,169,97,0.28)}
   .uc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap}
@@ -110,48 +98,69 @@
   .uc-fix .vs{color:var(--fg-faint);font-style:italic;font-size:.8rem;padding:0 .1rem}
   .uc-meta{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--fg-dim);text-align:right;line-height:1.8}
   .uc-meta .stage{color:var(--accent)}
-  .tag{display:inline-block;margin-top:.7rem;font-family:'JetBrains Mono',monospace;font-size:.64rem;
-    letter-spacing:.14em;text-transform:uppercase;color:var(--fg);border:1px solid var(--hair);
-    border-radius:2px;padding:.3rem .6rem}
+  .tag{display:inline-block;margin-top:.7rem;font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--fg);border:1px solid var(--hair);border-radius:2px;padding:.3rem .6rem}
 
   .prob{margin:1.5rem 0 .3rem}
-  .prob-label{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.16em;
-    text-transform:uppercase;color:var(--fg-faint);margin-bottom:.5rem}
+  .prob-label{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-faint);margin-bottom:.5rem}
   .prob-track{display:flex;height:34px;border:1px solid var(--hair);border-radius:3px;overflow:hidden}
-  .prob-seg{display:flex;align-items:center;justify-content:center;font-size:.74rem;
-    font-family:'JetBrains Mono',monospace;transition:flex .6s cubic-bezier(.16,1,.3,1);min-width:0;overflow:hidden;white-space:nowrap}
+  .prob-seg{display:flex;align-items:center;justify-content:center;font-size:.74rem;font-family:'JetBrains Mono',monospace;
+    transition:flex .6s cubic-bezier(.16,1,.3,1);min-width:0;overflow:hidden;white-space:nowrap}
   .prob-seg.h{background:var(--accent-soft);color:var(--fg)}
   .prob-seg.d{background:transparent;color:var(--fg-dim)}
   .prob-seg.a{background:rgba(255,255,255,0.07);color:var(--fg)}
   .prob-seg+.prob-seg{border-left:1px solid var(--hair)}
-  .prob-key{display:flex;flex-wrap:wrap;gap:1.2rem;margin-top:.55rem;font-family:'JetBrains Mono',monospace;
-    font-size:.68rem;color:var(--fg-dim)}
+  .prob-key{display:flex;flex-wrap:wrap;gap:1.2rem;margin-top:.55rem;font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--fg-dim)}
   .prob-key b{color:var(--fg);font-weight:500}
 
+  /* prose + picks + legs */
+  .block{margin-top:1.9rem}
+  .block h3{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+  .block p{color:var(--fg-dim);max-width:72ch;font-size:.95rem}
+  .picks{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.9rem}
+  @media(max-width:640px){.picks{grid-template-columns:1fr}}
+  .pick{border:1px solid var(--hair);border-radius:4px;padding:1.3rem;background:var(--bg-lift);transition:background .4s,border-color .4s}
+  .pick:hover{background:var(--bg-lift-2);border-color:rgba(201,169,97,0.3)}
+  .pick .plabel{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-faint);margin-bottom:.6rem}
+  .pick.best .plabel{color:var(--accent)}
+  .pick .pname{font-family:'Fraunces',serif;font-size:1.28rem;font-weight:500;line-height:1.15}
+  .pick .pconf{display:inline-block;margin:.5rem 0 .7rem;font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--accent)}
+  .pick .pwhy{font-size:.88rem;color:var(--fg-dim);line-height:1.5}
+
+  .legs{margin-top:2rem;border:1px solid var(--hair);border-radius:4px;overflow:hidden}
+  .leg{display:grid;grid-template-columns:118px 1fr auto;gap:1rem;align-items:center;padding:.95rem 1.2rem;border-bottom:1px solid var(--hair-soft);transition:background .3s}
+  .leg:last-child{border-bottom:none}.leg:hover{background:var(--bg-lift)}
+  .leg .lmarket{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-faint)}
+  .leg .lpick{font-size:.96rem;color:var(--fg)}
+  .leg .lpick small{display:block;color:var(--fg-dim);font-size:.82rem;margin-top:.15rem;line-height:1.45}
+  .leg .lconf{font-family:'JetBrains Mono',monospace;font-size:.8rem;white-space:nowrap;display:flex;align-items:center;gap:.5rem;justify-content:flex-end}
+  .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+  .dot.hi{background:var(--good)}.dot.mid{background:var(--accent)}.dot.lo{background:var(--risk)}
+  @media(max-width:640px){.leg{grid-template-columns:1fr auto;gap:.4rem}.leg .lmarket{grid-column:1/-1;margin-bottom:.1rem}}
+
+  .callout{margin-top:1.4rem;padding:1rem 1.2rem;border-left:2px solid var(--hair);background:var(--bg-lift);border-radius:0 4px 4px 0}
+  .callout.risk{border-left-color:var(--risk)}
+  .callout .clabel{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-faint);margin-bottom:.4rem}
+  .callout.risk .clabel{color:var(--risk)}
+  .callout p{font-size:.9rem;color:var(--fg-dim);max-width:72ch}
+
   .lean{margin-top:1.3rem;display:flex;gap:1rem;align-items:flex-start}
-  .lean .llabel{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.14em;
-    text-transform:uppercase;color:var(--accent);white-space:nowrap;padding-top:.15rem}
-  .lean p{color:var(--fg-dim);font-size:.94rem;max-width:70ch}
-  .lean p b{color:var(--fg);font-weight:600}
-  .pending{margin-top:.9rem;font-family:'JetBrains Mono',monospace;font-size:.66rem;
-    letter-spacing:.06em;color:var(--fg-faint)}
+  .lean .llabel{font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);white-space:nowrap;padding-top:.15rem}
+  .lean p{color:var(--fg-dim);font-size:.94rem;max-width:70ch}.lean p b{color:var(--fg);font-weight:600}
+  .pending{margin-top:.9rem;font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.06em;color:var(--fg-faint)}
 
   footer{padding:4rem 0 0;color:var(--fg-faint);font-size:.85rem}
-  footer .rg{border:1px solid var(--hair);border-radius:4px;padding:1.2rem 1.4rem;
-    color:var(--fg-dim);max-width:72ch;line-height:1.6}
+  footer .rg{border:1px solid var(--hair);border-radius:4px;padding:1.2rem 1.4rem;color:var(--fg-dim);max-width:72ch;line-height:1.6}
   footer .rg b{color:var(--fg)}
   footer .fine{margin-top:1.4rem;font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.04em;line-height:1.9}
-
   @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 
   details.howto{margin:2rem 0 0;border:1px dashed var(--hair);border-radius:4px;padding:0 1.3rem}
-  details.howto summary{cursor:pointer;padding:1rem 0;font-family:'JetBrains Mono',monospace;font-size:.72rem;
-    letter-spacing:.12em;text-transform:uppercase;color:var(--fg-faint);list-style:none}
+  details.howto summary{cursor:pointer;padding:1rem 0;font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-faint);list-style:none}
   details.howto summary::-webkit-details-marker{display:none}
   details.howto[open] summary{color:var(--accent);border-bottom:1px solid var(--hair-soft)}
   details.howto .htbody{padding:1.2rem 0;color:var(--fg-dim);font-size:.9rem}
-  details.howto code{font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--accent);
-    background:var(--accent-soft);padding:.1rem .35rem;border-radius:3px}
+  details.howto code{font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--accent);background:var(--accent-soft);padding:.1rem .35rem;border-radius:3px}
 </style>
 </head>
 <body>
@@ -166,11 +175,11 @@
       <summary>How to refill this each matchday →</summary>
       <div class="htbody">
         Edit the <code>DATA</code> object near the bottom of this file. Move finished games into
-        <code>results</code> (add a <code>reads</code> array to any game you want settled with ✓/✗ chips),
-        and add the next fixtures to <code>upcoming</code> with a <code>prob</code> split and a
-        <code>lean</code>. Flags render automatically from the team name via the built-in map —
-        just type the country name exactly. Update <code>scorecard</code> with how the reads landed.
-        Save, commit, push — GitHub Pages redeploys.
+        <code>results</code> (add a <code>reads</code> array to settle a game with ✓/✗ chips). For fixtures,
+        a full read takes <code>stakes</code>, <code>statRead</code>, <code>bestBet</code>, <code>valueBet</code>,
+        a <code>legs</code> array (market / pick / conf / note), plus <code>swaps</code> and <code>risk</code>;
+        if you only add a <code>lean</code> string it renders as a quick model card instead. Flags render
+        automatically from the team name. Set each leg's <code>conf</code> 0–100 (dot: green ≥72, amber 60–71, red &lt;60).
       </div>
     </details>
   </div>
@@ -200,87 +209,150 @@ const DATA = {
   title:"The Ledger",
   dateLabel:"Round of 32 · times AEST",
   updated:"Updated 1 Jul 2026",
-  intro:"Stat-driven match reads for the World Cup knockouts. Settled results up top with how the calls landed, the live slate below with model probabilities and leans.",
+  intro:"Stat-driven match reads for the World Cup knockouts. Settled results up top with how the calls landed; Thursday and Friday's ties now carry full market-by-market legs, with the weekend games on quick model leans until their live reads.",
 
   scorecard:{
-    landed:3, total:3,
-    label:"Headline reads landed · Wednesday R32",
-    tiles:[
-      {t:"France to win", ok:true},
-      {t:"Mexico under 2.5", ok:true},
-      {t:"Norway to advance", ok:true}
-    ],
+    landed:3, total:3, label:"Headline reads landed · Wednesday R32",
+    tiles:[{t:"France to win",ok:true},{t:"Mexico under 2.5",ok:true},{t:"Norway to advance",ok:true}],
     note:"All three Wednesday best bets came in — France cruised, Mexico ground out the shutout, Norway edged the coin-flip. Only miss on the slate was the aggressive Mexico Under 1.5 value alt."
   },
 
-  /* Finished games. Add a `reads` array to settle one with chips. */
   results:[
-    {
-      home:"France", away:"Sweden", hs:3, as:0, stage:"Round of 32", when:"Wed 1 Jul",
+    {home:"France",away:"Sweden",hs:3,as:0,stage:"Round of 32",when:"Wed 1 Jul",
       verdict:"Textbook demolition. France cruised to a 3-0 shutout — the win, the -1.0 handicap and the over 2.5 all landed exactly as the most one-sided read on the slate projected.",
-      reads:[
-        {t:"France to win", ok:true},
-        {t:"France -1.0", ok:true},
-        {t:"Over 2.5 goals", ok:true},
-        {t:"France to nil", ok:true}
-      ]
-    },
-    {
-      home:"Mexico", away:"Ecuador", hs:2, as:0, stage:"Round of 32", when:"Wed 1 Jul",
+      reads:[{t:"France to win",ok:true},{t:"France -1.0",ok:true},{t:"Over 2.5 goals",ok:true},{t:"France to nil",ok:true}]},
+    {home:"Mexico",away:"Ecuador",hs:2,as:0,stage:"Round of 32",when:"Wed 1 Jul",
       verdict:"The rock fight played out as billed. Mexico won 2-0 to keep their clean-sheet run intact — under 2.5, the win and both-teams-to-score-no all home. Only the aggressive Under 1.5 value alt missed on the second goal.",
-      reads:[
-        {t:"Under 2.5 goals", ok:true},
-        {t:"Mexico to win", ok:true},
-        {t:"BTTS — No", ok:true},
-        {t:"Under 1.5 goals", ok:false}
-      ]
-    },
-    {
-      home:"Ivory Coast", away:"Norway", hs:1, as:2, stage:"Round of 32", when:"Wed 1 Jul",
+      reads:[{t:"Under 2.5 goals",ok:true},{t:"Mexico to win",ok:true},{t:"BTTS — No",ok:true},{t:"Under 1.5 goals",ok:false}]},
+    {home:"Ivory Coast",away:"Norway",hs:1,as:2,stage:"Round of 32",when:"Wed 1 Jul",
       verdict:"Norway edged the coin-flip 2-1 as the slight favourite. Advance and over 1.5 both landed, and the tie stayed as tight as the model projected right to the end.",
-      reads:[
-        {t:"Norway to advance", ok:true},
-        {t:"Over 1.5 goals", ok:true},
-        {t:"Both teams scored", ok:true}
-      ]
-    },
-    /* compact rows (no reads) */
-    {home:"South Africa", away:"Canada", hs:0, as:1, stage:"R32", when:"Mon 29 Jun"},
-    {home:"Brazil", away:"Japan", hs:2, as:1, stage:"R32", when:"Tue 30 Jun"},
-    {home:"Germany", away:"Paraguay", hs:1, as:1, stage:"R32", when:"Tue 30 Jun", extra:"AET / pens"},
-    {home:"Netherlands", away:"Morocco", hs:1, as:1, stage:"R32", when:"Tue 30 Jun", extra:"Morocco advanced"}
+      reads:[{t:"Norway to advance",ok:true},{t:"Over 1.5 goals",ok:true},{t:"Both teams scored",ok:true}]},
+    {home:"South Africa",away:"Canada",hs:0,as:1,stage:"R32",when:"Mon 29 Jun"},
+    {home:"Brazil",away:"Japan",hs:2,as:1,stage:"R32",when:"Tue 30 Jun"},
+    {home:"Germany",away:"Paraguay",hs:1,as:1,stage:"R32",when:"Tue 30 Jun",extra:"AET / pens"},
+    {home:"Netherlands",away:"Morocco",hs:1,as:1,stage:"R32",when:"Tue 30 Jun",extra:"Morocco advanced"}
   ],
 
-  /* Upcoming fixtures. prob totals ~100. */
   upcoming:[
-    {home:"England", away:"Congo DR", kickoff:"Thu 2 Jul · 2:00 AM", stage:"Round of 32", tag:"Favourite",
+    /* ===== THURSDAY (full reads) ===== */
+    {home:"England",away:"Congo DR",kickoff:"Thu 2 Jul · 2:00 AM",stage:"Round of 32",tag:"Grind the block",
       prob:{home:75,draw:17,away:8},
-      lean:"<b>England to win & advance.</b> Heavy favourites against Congo DR's stubborn, deep-sitting block — lean the win, but expect a tighter margin than the odds imply against a side that's frustrated bigger names."},
-    {home:"Belgium", away:"Senegal", kickoff:"Thu 2 Jul · 6:00 AM", stage:"Round of 32", tag:"Coin-flip",
+      stakes:"England won Group L with the tournament's third-best possession (65.3%); DR Congo are in a knockout for the first time, ranked 38th for possession (38.5%), and will park a deep, disciplined block. Congo DR have conceded more than once only once in their last 15 matches — this is a grind, not a romp.",
+      statRead:"England struggled against low blocks (0-0 Ghana, laboured past Panama) but figured it out late against Panama by playing quickly through the middle. Congo DR offer almost nothing forward — just four shots on target across their Colombia and Portugal games. Read it as a controlled 2-0: England break through eventually and keep a clean sheet.",
+      bestBet:{name:"England to win",conf:75,why:"Heavy favourites (-370) with the quality to eventually pick the lock against a side carrying almost no attacking threat."},
+      valueBet:{name:"England to win to nil",conf:58,why:"Congo DR managed just four shots on target across two tougher group games; the shutout is live and pays better than the short win."},
+      legs:[
+        {market:"Result",pick:"England to win",conf:75,note:"Quality tells against a deep block; -370 favourites."},
+        {market:"Result",pick:"England to advance",conf:88,note:"Covers ET/pens; -850 to go through — the near-lock."},
+        {market:"Goals",pick:"Under 3.5 total goals",conf:80,note:"Controlled grind; DR Congo won't open up."},
+        {market:"Team goals",pick:"England 2+ goals",conf:58,note:"~2.1 expected/game; their second goal tends to follow the first quickly."},
+        {market:"Scorer",pick:"Harry Kane anytime",conf:55,note:"Shortest-priced scorer (~evens); focal point in a packed box."},
+        {market:"Shots",pick:"Bukayo Saka 1+ shot on target",conf:65,note:"Wide threat; England attack the flanks of a low block."},
+        {market:"Corners",pick:"England 7+ corners",conf:68,note:"Sustained pressure on a side defending deep for 90 minutes."},
+        {market:"Cards",pick:"A DR Congo player carded",conf:62,note:"Defending a deep block for long spells breeds tactical fouls."}
+      ],
+      swaps:"Safer: England to advance (-850). More value: England win to nil, or a bigger corner line. The goals market splits — some like Under 2.5 (grind), others Over 2.5 (floodgates once England score); Under 3.5 splits the difference.",
+      risk:"The Ghana 0-0 is the warning — England have already been shut out by a low block once. A frustrating 1-0 kills the 2+ goals and corner reaches, and their patched-up right side (James, Quansah, Livramento all out) is a soft spot for a Congo counter."},
+
+    {home:"Belgium",away:"Senegal",kickoff:"Thu 2 Jul · 6:00 AM",stage:"Round of 32",tag:"Coin-flip",
       prob:{home:45,draw:29,away:27},
-      lean:"<b>The tightest tie of the batch.</b> Two quality sides with the draw very live — no strong side to the result, lean cagey and toward the unders until the full stat read is in."},
-    {home:"USA", away:"Bosnia and Herzegovina", kickoff:"Thu 2 Jul · 10:00 AM", stage:"Round of 32", tag:"Favourite",
+      stakes:"One of the hardest ties of the round to call. Belgium won Group G but laboured (1-1 Egypt, 0-0 Iran) before thrashing New Zealand 5-1; they lead the tournament in xG-for per 90 (2.55) yet struggle to break down organised defences. Senegal squeezed in last but scored eight in the group and carry serious transition speed — though first-choice keeper Édouard Mendy is out injured, a real blow.",
+      statRead:"The lesson of Belgium's group is that a high-energy out-of-possession side frustrates them — exactly Senegal's game. But Senegal's back line is fragile (six conceded) and now without Mendy. Multiple models lean toward a tense, low-scoring night with the draw very live. This is a genuine 50/50.",
+      bestBet:{name:"Belgium to advance",conf:62,why:"Covers extra time and penalties in a coin-flip tie — far safer than the 90-minute result given how live the draw is (~30%)."},
+      valueBet:{name:"Kevin De Bruyne 1+ shot on target",conf:70,why:"Tied for the most shots of any player at the tournament (16); against a Senegal side that may sit off, he'll get his looks."},
+      legs:[
+        {market:"Result",pick:"Belgium to advance",conf:62,note:"Coin-flip in 90; advance covers ET/pens."},
+        {market:"Shots",pick:"Kevin De Bruyne 1+ shot on target",conf:70,note:"Tournament-high 16 shots; Belgium's chances run through him."},
+        {market:"Shots",pick:"Ismaïla Sarr 1+ shot",conf:70,note:"Senegal's leading scorer (3) and main transition threat."},
+        {market:"Scorer",pick:"Romelu Lukaku anytime",conf:48,note:"Shortest-priced scorer; the man to break down a leaky Senegal back line."},
+        {market:"Goals",pick:"Under 2.5 total goals",conf:55,note:"Under favoured (-160); Belgium have laboured against organised sides."},
+        {market:"Cards",pick:"Over 3.5 total cards",conf:58,note:"Physical Senegal midfield in a tense, even knockout."}
+      ],
+      swaps:"The draw (+200–230) is a genuine live play, not a throwaway. For goals, Senegal's fragile defence (now Mendy-less) plus Belgium's tournament-best xG makes BTTS a live alt. De Bruyne shots is the cleanest single edge.",
+      risk:"It's a coin-flip — don't overstake the result. Belgium's no-shows against pressing sides (Egypt, Iran) are real, and Senegal have the athletes to make it ugly. Lean on the advance line, not the 90-minute win."},
+
+    {home:"USA",away:"Bosnia and Herzegovina",kickoff:"Thu 2 Jul · 10:00 AM",stage:"Round of 32",tag:"Leaky end-to-end",
       prob:{home:69,draw:19,away:12},
-      lean:"<b>USA favoured on home soil.</b> Lean the hosts to win and advance; Bosnia's threat is largely from set pieces, so a card/aerial angle may surface in the full read."},
-    {home:"Spain", away:"Austria", kickoff:"Fri 3 Jul · 5:00 AM", stage:"Round of 32", tag:"Favourite",
-      prob:{home:73,draw:18,away:10},
-      lean:"<b>Spain heavy favourites.</b> Lean Spain to win and dominate possession; Austria's organisation is the only real speed bump — a Spain corners/possession angle looks strong pre-read."},
-    {home:"Portugal", away:"Croatia", kickoff:"Fri 3 Jul · 9:00 AM", stage:"Round of 32", tag:"Favourite edge",
-      prob:{home:54,draw:27,away:20},
-      lean:"<b>Portugal edge a veteran heavyweight tie.</b> Lean Portugal but tight — Croatia's midfield can drag it long, so the under and a draw-no-bet are worth pricing in the full read."},
-    {home:"Switzerland", away:"Algeria", kickoff:"Fri 3 Jul · 1:00 PM", stage:"Round of 32", tag:"Tight",
+      stakes:"USA won Group D and are heavy home favourites, but their defence is the concern — just one clean sheet in the last 11. Bosnia are here on merit (they knocked out Italy in the playoffs), conceded six in the group but carry a set-piece and Džeko threat. Both teams scored in 11 of Bosnia's last 12 — this projects end-to-end.",
+      statRead:"USA press aggressively and attack with width through Dest, Robinson and Pulisic; they've scored within 11 minutes in all three group games. Bosnia sit deep and chase once behind. With both defences leaky, the goals markets are the play, not a shutout.",
+      bestBet:{name:"USA to win",conf:69,why:"Home favourites with far more depth and attacking quality against a Bosnia side that struggles to create against organised defences."},
+      valueBet:{name:"Over 2.5 total goals",conf:62,why:"USA's leaky back line (one clean sheet in 11) meets a Bosnia side that's seen both teams score in 11 of their last 12 — one of the stronger totals plays on the board."},
+      legs:[
+        {market:"Result",pick:"USA to win",conf:69,note:"Home favourites, deeper and sharper in attack."},
+        {market:"Goals",pick:"Over 2.5 total goals",conf:62,note:"Both defences leaky; USA explosive (12 goals in last 5)."},
+        {market:"Scorer",pick:"Folarin Balogun anytime",conf:52,note:"Two group goals, USA's most reliable finisher (~+120)."},
+        {market:"Shots",pick:"Christian Pulisic 1+ shot on target",conf:65,note:"Captain back from rest; central to every attack."},
+        {market:"Corners",pick:"USA 6+ corners",conf:66,note:"Press and width dominate; 16 combined corners in their last two games."},
+        {market:"Time",pick:"USA to score in the 1st half",conf:62,note:"Scored within 11 minutes in all three group games; 1H goal in 10 of last 13."},
+        {market:"BTTS",pick:"Both teams to score",conf:55,note:"Close to a coin flip (-104); don't assume a USA shutout."}
+      ],
+      swaps:"More juice: USA 2-0 or 2-1 correct score, or Balogun 1+ shot on target. Safer: USA to advance (-600). BTTS-yes and Over 2.5 are correlated — both bet on an open game.",
+      risk:"USA haven't beaten a UEFA nation in 12 attempts or won a World Cup knockout since 2002 — the mental block is real. Bosnia's set pieces (Katić, Džeko) against a USA side short of right-back cover could nick them a lead."},
+
+    /* ===== FRIDAY (full reads) ===== */
+    {home:"Spain",away:"Austria",kickoff:"Fri 3 Jul · 5:00 AM",stage:"Round of 32",tag:"Class gap",
+      prob:{home:73,draw:18,away:9},
+      stakes:"About as lopsided as the Round of 32 gets on paper. Spain swept Group H with seven points, five goals and zero conceded across three games, facing just four shots inside their own box all group. Austria reached the knockouts the chaotic way (a 3-3 draw with Algeria) — attacking freely but leaking, with no clean sheet in 12 World Cup matches.",
+      statRead:"Spain out-shot Austria's recent sample 76 to 27, average 15 shots a game, and pass at 91% accuracy — structural dominance. Austria's high press is thrilling but hasn't survived elite midfields, and Spain are built to play through pressure. Injury note: Nico Williams and Yeremy Pino are both doubtful, leaning on Yamal and Baena for width.",
+      bestBet:{name:"Spain to win",conf:73,why:"Unbeaten in 32, unbreached at this tournament, and a class above — the most secure favourite on Friday's slate."},
+      valueBet:{name:"Spain 2+ team goals",conf:60,why:"They put four past Saudi Arabia and dominate shot volume; against a defence that hasn't kept a World Cup clean sheet in 12, multiple Spanish goals is reasonable."},
+      legs:[
+        {market:"Result",pick:"Spain to win",conf:73,note:"Heavy favourites (3/10), unbeaten in 32."},
+        {market:"Result",pick:"Spain to advance",conf:87,note:"-1/7 to go through; the near-lock."},
+        {market:"Team goals",pick:"Spain 2+ goals",conf:60,note:"Dominant shot volume vs a leaky Austria back line."},
+        {market:"Scorer",pick:"Mikel Oyarzabal anytime",conf:50,note:"Leads the line, two goals, arrives on cutbacks and second balls."},
+        {market:"Shots",pick:"Lamine Yamal 1+ shot on target",conf:62,note:"Growing into the tournament; carries the width with Williams/Pino doubtful."},
+        {market:"Corners",pick:"Spain 6+ corners",conf:66,note:"Territorial dominance against a side that will defend deep."},
+        {market:"Cards",pick:"An Austria player carded",conf:60,note:"A pressing side chasing Spain's rondo tends to foul."}
+      ],
+      swaps:"Goals market splits — some like Under 2.5 (Spain rarely goal-rush, 2-0 popular), others Over 2.5 (Austria leaky). Spain 2+ team goals sidesteps that. Spain clean sheet is live (0 conceded all tournament) but Austria's output makes it a ~coin flip.",
+      risk:"Spain lost their last two World Cup knockouts (Russia, Morocco, both on pens), so nerves and a cagey low-scoring game are the scenario that sinks the goals reaches. Arnautović and Sabitzer can punish any lapse."},
+
+    {home:"Portugal",away:"Croatia",kickoff:"Fri 3 Jul · 9:00 AM",stage:"Round of 32",tag:"Heavyweight",
+      prob:{home:54,draw:27,away:19},
+      stakes:"A veteran heavyweight tie — Ronaldo's sixth World Cup against Modrić at 40. Portugal advanced as Group K runners-up, unbeaten in eight with four clean sheets in that run, but they stutter against sides that sit deep (draws with DR Congo and Colombia). Croatia recovered from a 4-2 loss to England to grind out wins over Panama and Ghana, and five of their last seven World Cup knockouts were level after 90.",
+      statRead:"Portugal have the deeper, more dangerous attack (Ronaldo, Leão, Neto, Félix, Bruno Fernandes) against a Croatia defence that cracked against England's wide overloads. But Croatia are knockout specialists who slow games down and go the distance — expect a cagey, tight contest Portugal edge, with a real chance it goes long.",
+      bestBet:{name:"Portugal to advance",conf:66,why:"Favourites with the superior squad, and advance covers the extra-time/penalties route that Croatia — serial knockout survivors — so often force."},
+      valueBet:{name:"Cristiano Ronaldo anytime scorer",conf:48,why:"Shortest-priced scorer on either side (~evens); Portugal's box presence runs through him, and he's the first man to score in six different World Cups."},
+      legs:[
+        {market:"Result",pick:"Portugal to advance",conf:66,note:"Favourites; covers ET/pens against knockout specialists."},
+        {market:"Scorer",pick:"Ronaldo anytime scorer",conf:48,note:"Shortest-priced scorer (~evens); focal point in the box."},
+        {market:"Shots",pick:"Bruno Fernandes 1+ shot on target",conf:60,note:"Portugal's creative engine and set-piece taker."},
+        {market:"Goals",pick:"Under 3.5 total goals",conf:72,note:"Cagey knockout; three of Portugal's last five major-tournament games were 0-0."},
+        {market:"Cards",pick:"A Croatia player carded",conf:64,note:"Aging legs chasing the ball; Perišić flagged as a card candidate."},
+        {market:"Corners",pick:"Portugal 6+ corners",conf:62,note:"Croatia sit deep; Portugal press and win set pieces."}
+      ],
+      swaps:"Goals market splits hard: Under 2.5 favoured (-165, cagey knockout) but the head-to-head argues the other way — all five recent meetings saw both teams score. BTTS is the value alt if you trust the H2H over the knockout caution.",
+      risk:"Croatia don't lose these tamely — five of their last seven knockouts went to extra time, and Modrić/Kovačić can control tempo and drag Portugal into a slow, frustrating night. Ronaldo also went missing against Colombia's low block."},
+
+    {home:"Switzerland",away:"Algeria",kickoff:"Fri 3 Jul · 1:00 PM",stage:"Round of 32",tag:"Structure vs flair",
       prob:{home:47,draw:29,away:24},
-      lean:"<b>Close, low-ceiling tie.</b> Slight Switzerland edge with the draw live — lean toward the unders; Algeria's physicality flags a possible cards angle."},
-    {home:"Australia", away:"Egypt", kickoff:"Sat 4 Jul · 4:00 AM", stage:"Round of 32", tag:"Coin-flip",
+      stakes:"A near pick-'em with a coaching-reunion subplot — Algeria's Petković spent seven years managing Switzerland. The Swiss won Group B (beat Canada 2-1) on organisation and a Xhaka-Freuler platform, but conceded in all three group games. Algeria squeezed through third on a chaotic 3-3 with Austria — the joint-worst defence of any qualifier (seven conceded, no clean sheet), but real threat through Mahrez and Amoura's pace.",
+      statRead:"Structure against spontaneity. Switzerland control territory and grind results; Algeria wait for Mahrez to unlock a moment and hope their pace punishes a high line. Both sides score freely and concede freely — Switzerland have conceded in every group game, Algeria have scored in every group game — which points squarely at both teams finding the net.",
+      bestBet:{name:"Switzerland to advance",conf:58,why:"The more organised, more experienced side at a venue they already won at (beat Canada here), in a coin-flip where their structure edges Algeria's chaos over 90-plus."},
+      valueBet:{name:"Both teams to score",conf:64,why:"Switzerland have conceded in all three group games and Algeria have scored in all three — the clearest pattern in the tie, favoured at -125."},
+      legs:[
+        {market:"Result",pick:"Switzerland to advance",conf:58,note:"Slight favourites; organisation edges it over 90-plus."},
+        {market:"BTTS",pick:"Both teams to score",conf:64,note:"Switzerland concede in every game, Algeria score in every game."},
+        {market:"Goals",pick:"Over 2.5 total goals",conf:55,note:"Two leaky defences; the market splits but attacking trends favour goals."},
+        {market:"Shots",pick:"Riyad Mahrez 1+ shot on target",conf:62,note:"Algeria's creator and two-goal man; everything runs through him."},
+        {market:"Scorer",pick:"Breel Embolo anytime",conf:45,note:"A goal and a penalty already; Switzerland's main box threat."},
+        {market:"Cards",pick:"Over 3.5 total cards",conf:56,note:"Tense, physical knockout between evenly-matched sides."}
+      ],
+      swaps:"The result is a coin-flip — Switzerland to advance covers ET/pens and is safer than the 90-minute win. BTTS is the cleanest read in the game. Score projections cluster around Switzerland 2-1.",
+      risk:"Switzerland's knockout hoodoo is real — five straight Round-of-16 exits, no quarter-final since 1954 — and Mahrez can win a tight game on his own. Their leaky defence cuts both ways, so a Swiss clean sheet is unlikely."},
+
+    /* ===== WEEKEND (quick leans until live reads) ===== */
+    {home:"Australia",away:"Egypt",kickoff:"Sat 4 Jul · 4:00 AM",stage:"Round of 32",tag:"Coin-flip",
       prob:{home:28,draw:33,away:39},
       lean:"<b>Genuinely even, Egypt a slight edge</b> with Salah the difference-maker. Lean tight and draw-friendly — a Salah shots/involvement prop is the likely value angle."},
-    {home:"Argentina", away:"Cape Verde", kickoff:"Sat 4 Jul · 8:00 AM", stage:"Round of 32", tag:"Mismatch",
+    {home:"Argentina",away:"Cape Verde",kickoff:"Sat 4 Jul · 8:00 AM",stage:"Round of 32",tag:"Mismatch",
       prob:{home:83,draw:12,away:5},
       lean:"<b>The biggest mismatch of the batch.</b> Lean Argentina comfortably — a -1.5 handicap and over-goals look strong; the debutants will sit deep and chase."},
-    {home:"Colombia", away:"Ghana", kickoff:"Sat 4 Jul · 11:30 AM", stage:"Round of 32", tag:"Favourite",
+    {home:"Colombia",away:"Ghana",kickoff:"Sat 4 Jul · 11:30 AM",stage:"Round of 32",tag:"Favourite",
       prob:{home:64,draw:23,away:13},
       lean:"<b>Colombia favoured.</b> Lean Colombia to win and advance; their physical, foul-heavy profile against a defensive Ghana flags cards and a tight-ish total."},
-    {home:"Canada", away:"Morocco", kickoff:"Sun 5 Jul · 3:00 AM", stage:"Round of 16", tag:"Round of 16",
+    {home:"Canada",away:"Morocco",kickoff:"Sun 5 Jul · 3:00 AM",stage:"Round of 16",tag:"Round of 16",
       prob:{home:20,draw:27,away:53},
       lean:"<b>First Round of 16 tie.</b> Morocco favoured after ousting the Netherlands — lean Morocco to advance; Canada will need Davies back to spring it."}
   ]
@@ -289,20 +361,19 @@ const DATA = {
    ▲▲▲  END OF DATA — leave everything below untouched  ▲▲▲
    ================================================================ */
 
-/* ---- flag map: team name -> ISO code (flagcdn) ---- */
 const FLAGS={
   "Ivory Coast":"ci","Norway":"no","France":"fr","Sweden":"se","Mexico":"mx","Ecuador":"ec",
   "England":"gb-eng","Congo DR":"cd","Belgium":"be","Senegal":"sn","USA":"us","Bosnia and Herzegovina":"ba",
   "Spain":"es","Austria":"at","Portugal":"pt","Croatia":"hr","Brazil":"br","Japan":"jp","Germany":"de",
   "Paraguay":"py","Netherlands":"nl","Morocco":"ma","Argentina":"ar","Jordan":"jo","Algeria":"dz",
   "South Africa":"za","Canada":"ca","Cape Verde":"cv","Switzerland":"ch","Australia":"au","Egypt":"eg",
-  "Colombia":"co","Ghana":"gh","Uzbekistan":"uz","Scotland":"gb-sct","Wales":"gb-wls","Uruguay":"uy",
-  "Korea Republic":"kr","South Korea":"kr","Saudi Arabia":"sa","Qatar":"qa","Haiti":"ht","Curacao":"cw",
-  "Panama":"pa","Jamaica":"jm","New Zealand":"nz","Iran":"ir","Iraq":"iq","Tunisia":"tn","Nigeria":"ng",
-  "Cameroon":"cm","Italy":"it","Denmark":"dk","Poland":"pl","Turkey":"tr","Ukraine":"ua"
+  "Colombia":"co","Ghana":"gh","Uzbekistan":"uz","Scotland":"gb-sct","Uruguay":"uy","South Korea":"kr",
+  "Saudi Arabia":"sa","Qatar":"qa","Haiti":"ht","Curacao":"cw","Panama":"pa","New Zealand":"nz",
+  "Iran":"ir","Iraq":"iq","Tunisia":"tn","Italy":"it","Turkey":"tr"
 };
 const $=(id)=>document.getElementById(id);
 const esc=(s)=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const dotClass=(c)=>c>=72?'hi':c>=60?'mid':'lo';
 function flag(name,sm){const c=FLAGS[name];if(!c)return '';return `<img class="flag${sm?' sm':''}" src="https://flagcdn.com/${c}.svg" alt="${esc(name)}" loading="lazy">`;}
 
 function render(){
@@ -313,8 +384,7 @@ function render(){
 }
 
 function renderScorecard(){
-  const s=DATA.scorecard;const pct=s.total?s.landed/s.total:0;
-  const r=52,circ=2*Math.PI*r,off=circ*(1-pct);
+  const s=DATA.scorecard;const pct=s.total?s.landed/s.total:0;const r=52,circ=2*Math.PI*r,off=circ*(1-pct);
   const tiles=s.tiles.map(t=>`<div class="sc-tile"><span class="${t.ok?'tick':'cross'}">${t.ok?'✓':'✗'}</span>${esc(t.t)}</div>`).join('');
   $('scorecard-sec').innerHTML=`
     <div class="shead"><h2>Scorecard</h2><div class="line"></div><div class="count">MODEL vs RESULT</div></div>
@@ -326,44 +396,33 @@ function renderScorecard(){
         <text class="big" x="60" y="58" text-anchor="middle">${s.landed}/${s.total}</text>
         <text class="small" x="60" y="74" text-anchor="middle">${Math.round(pct*100)}% HIT</text>
       </svg>
-      <div class="sc-body">
-        <div class="sc-label">${esc(s.label)}</div>
-        <div class="sc-tiles">${tiles}</div>
-        ${s.note?`<p class="sc-note">${esc(s.note)}</p>`:''}
-      </div>
+      <div class="sc-body"><div class="sc-label">${esc(s.label)}</div><div class="sc-tiles">${tiles}</div>
+        ${s.note?`<p class="sc-note">${esc(s.note)}</p>`:''}</div>
     </div>`;
 }
 
 function renderResults(){
-  const detailed=DATA.results.filter(r=>r.reads);
-  const compact=DATA.results.filter(r=>!r.reads);
+  const detailed=DATA.results.filter(r=>r.reads),compact=DATA.results.filter(r=>!r.reads);
   let html=`<div class="shead"><h2>Results</h2><div class="line"></div><div class="count">${DATA.results.length} PLAYED</div></div>`;
-
   html+=detailed.map(r=>{
     const hw=r.hs>r.as,aw=r.as>r.hs;
     const reads=r.reads.map(x=>`<span class="chip ${x.ok?'ok':'no'}"><span class="mk">${x.ok?'✓':'✗'}</span>${esc(x.t)}</span>`).join('');
-    return `<div class="rcard">
-      <div class="rc-top">
-        <div class="rc-teams">
-          <div class="rc-side">${flag(r.home)}<span class="nm">${esc(r.home)}</span></div>
-          <div class="rc-score"><span class="${hw?'win':''}">${r.hs}</span><span class="dash">–</span><span class="${aw?'win':''}">${r.as}</span></div>
-          <div class="rc-side"><span class="nm">${esc(r.away)}</span>${flag(r.away)}</div>
-        </div>
-        <div class="rc-meta"><div class="stage">${esc(r.stage)}</div><div>${esc(r.when)}</div>${r.extra?`<div>${esc(r.extra)}</div>`:''}</div>
+    return `<div class="rcard"><div class="rc-top">
+      <div class="rc-teams">
+        <div class="rc-side">${flag(r.home)}<span class="nm">${esc(r.home)}</span></div>
+        <div class="rc-score"><span class="${hw?'win':''}">${r.hs}</span><span class="dash">–</span><span class="${aw?'win':''}">${r.as}</span></div>
+        <div class="rc-side"><span class="nm">${esc(r.away)}</span>${flag(r.away)}</div>
       </div>
-      ${r.verdict?`<p class="rc-verdict">${esc(r.verdict)}</p>`:''}
-      <div class="rc-reads">${reads}</div>
-    </div>`;
+      <div class="rc-meta"><div class="stage">${esc(r.stage)}</div><div>${esc(r.when)}</div>${r.extra?`<div>${esc(r.extra)}</div>`:''}</div>
+      </div>${r.verdict?`<p class="rc-verdict">${esc(r.verdict)}</p>`:''}<div class="rc-reads">${reads}</div></div>`;
   }).join('');
-
   if(compact.length){
     html+=`<div class="rgrid">`+compact.map(r=>{
       const hw=r.hs>r.as,aw=r.as>r.hs;
       return `<div class="rrow">
         <div class="side"><span class="nm">${esc(r.home)}</span>${flag(r.home,1)}</div>
         <div class="sc"><span class="${hw?'w':''}">${r.hs}</span>–<span class="${aw?'w':''}">${r.as}</span>${r.extra?`<div class="ex">${esc(r.extra)}</div>`:''}</div>
-        <div class="side a">${flag(r.away,1)}<span class="nm">${esc(r.away)}</span></div>
-      </div>`;
+        <div class="side a">${flag(r.away,1)}<span class="nm">${esc(r.away)}</span></div></div>`;
     }).join('')+`</div>`;
   }
   $('results-sec').innerHTML=html;
@@ -373,14 +432,34 @@ function renderUpcoming(){
   let html=`<div class="shead"><h2>Coming up</h2><div class="line"></div><div class="count">${DATA.upcoming.length} FIXTURES</div></div>`;
   html+=DATA.upcoming.map(m=>{
     const p=m.prob;
+    let body='';
+    if(m.legs){
+      const legs=m.legs.map(l=>`<div class="leg"><div class="lmarket">${esc(l.market)}</div>
+        <div class="lpick">${esc(l.pick)}${l.note?`<small>${esc(l.note)}</small>`:''}</div>
+        <div class="lconf"><span class="dot ${dotClass(l.conf)}"></span>~${l.conf}%</div></div>`).join('');
+      body=`
+        ${m.stakes?`<div class="block"><h3>Who needs what</h3><p>${esc(m.stakes)}</p></div>`:''}
+        ${m.statRead?`<div class="block"><h3>The stat read</h3><p>${esc(m.statRead)}</p></div>`:''}
+        <div class="picks">
+          <div class="pick best"><div class="plabel">Best bet</div><div class="pname">${esc(m.bestBet.name)}</div>
+            <div class="pconf">~${m.bestBet.conf}% · confidence</div><div class="pwhy">${esc(m.bestBet.why)}</div></div>
+          <div class="pick"><div class="plabel">Value alternative</div><div class="pname">${esc(m.valueBet.name)}</div>
+            <div class="pconf">~${m.valueBet.conf}% · confidence</div><div class="pwhy">${esc(m.valueBet.why)}</div></div>
+        </div>
+        <div class="legs">${legs}</div>
+        ${m.swaps?`<div class="callout"><div class="clabel">Swaps</div><p>${esc(m.swaps)}</p></div>`:''}
+        ${m.risk?`<div class="callout risk"><div class="clabel">Swingiest leg / watch-out</div><p>${esc(m.risk)}</p></div>`:''}`;
+    } else {
+      body=`<div class="lean"><span class="llabel">Model lean</span><p>${m.lean}</p></div>
+        <div class="pending">◷ Full stat read added in the live matchday session</div>`;
+    }
     return `<div class="ucard">
       <div class="uc-top">
         <div class="uc-fix">${flag(m.home)}<span class="nm">${esc(m.home)}</span><span class="vs">v</span><span class="nm">${esc(m.away)}</span>${flag(m.away)}</div>
         <div class="uc-meta"><div class="stage">${esc(m.stage)}</div><div>${esc(m.kickoff)}</div></div>
       </div>
       ${m.tag?`<span class="tag">${esc(m.tag)}</span>`:''}
-      <div class="prob">
-        <div class="prob-label">Model win probability</div>
+      <div class="prob"><div class="prob-label">Model win probability</div>
         <div class="prob-track">
           <div class="prob-seg h" style="flex:${p.home}">${p.home}%</div>
           <div class="prob-seg d" style="flex:${p.draw}">${p.draw}%</div>
@@ -388,15 +467,14 @@ function renderUpcoming(){
         </div>
         <div class="prob-key"><span><b>${esc(m.home)}</b> ${p.home}%</span><span><b>Draw</b> ${p.draw}%</span><span><b>${esc(m.away)}</b> ${p.away}%</span></div>
       </div>
-      <div class="lean"><span class="llabel">Model lean</span><p>${m.lean}</p></div>
-      <div class="pending">◷ Full stat read added in the live matchday session</div>
+      ${body}
     </div>`;
   }).join('');
   $('upcoming-sec').innerHTML=html;
 }
 
 function observe(){
-  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.06,rootMargin:'-30px'});
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.05,rootMargin:'-30px'});
   document.querySelectorAll('.rcard,.ucard').forEach(el=>io.observe(el));
 }
 render();
